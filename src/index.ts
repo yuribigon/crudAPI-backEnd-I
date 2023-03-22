@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 import express, { Express, Request, Response } from 'express';
+import { registerMiddlewares } from './middlewares';
 import { registerRoutes } from './routes';
 
 dotenv.config();
@@ -13,6 +14,10 @@ app.use(express.json());
 app.get('/', (_: Request, res: Response) => {
   res.json({ message: 'API waiting for requests...' });
 });
+
+
+
+registerMiddlewares(app);
 
 registerRoutes(app);
 
