@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { ValidationError } from "../models/growdever";
 import { updateGrowdeverSkills } from "../db/growdevers";
 import { selectGrowdeverByUuid } from "../db/growdevers";
+import { ValidationError } from "../exceptions/validationError";
 
 
 export const addSkillGrowdeverController = (req: Request, res: Response) => {

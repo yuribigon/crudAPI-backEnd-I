@@ -1,7 +1,7 @@
 import { createGrowdeverController } from './controllers/createGrowdever';
 import { deleteGrowdeverController } from './controllers/deleteGrowdever';
 import { getGrowdeverController } from './controllers/getGrowdevers';
-import { getGrowdeverByUuidController } from './controllers/getGrowdeversBYUuid';
+import { getGrowdeverByUuidController } from './controllers/getGrowdeverByUuid';
 import { updateGrowdeverController } from './controllers/updateGrowdever';
 import { Express } from 'express';
 import { addSkillGrowdeverController } from './controllers/addSkillGrowdever';

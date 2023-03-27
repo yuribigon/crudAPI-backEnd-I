@@ -1,12 +1,12 @@
 import { Growdever } from "../models/growdever";
 
 let growdevers : Growdever[] = [
-    new Growdever('Yuri Bigon'),
-    new Growdever('Giovanna Lopes'),
-    new Growdever('Sol LB'),
-    new Growdever('Pipoca LB'),
-    new Growdever('Arthur Pessoa'),
-    new Growdever('Jonathan Spinelli'),
+    new Growdever('Yuri Bigon', '123456789123', 'yuri-bigon', 'minhasenha123'),
+    new Growdever('Giovanna Lopes', '123456789123', 'giovanna-lopes', 'minhasenha123'),
+    new Growdever('Sol LB','123456789123', 'sol-lb', 'minhasenha123'),
+    new Growdever('Pipoca LB','123456789123', 'pipoca-lb', 'minhasenha123'),
+    new Growdever('Arthur Pessoa', '123456789123', 'arthur-pessoa', 'minhasenha123'),
+    new Growdever('Jonathan Spinelli','123456789123', 'jonathan-spinelli', 'minhasenha123'),
 ]
 
 export const selectAllGrowdevers = () => growdevers;
@@ -16,7 +16,7 @@ export const insertGrowdever = (growdever: Growdever) => {
         growdevers.push(growdever);
         return growdever.getUuid();
     } catch (error) {
-        console.log('Erro ao salvar growdever', error);
+        console.log('Erro ao salvar growdever');
     }
 };
 

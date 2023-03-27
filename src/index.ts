@@ -15,8 +15,6 @@ app.get('/', (_: Request, res: Response) => {
   res.json({ message: 'API waiting for requests...' });
 });
 
-
-
 registerMiddlewares(app);
 
 registerRoutes(app);

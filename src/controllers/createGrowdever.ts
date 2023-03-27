@@ -1,12 +1,12 @@
 import { Request, Response} from 'express'
 import { insertGrowdever } from '../db/growdevers';
-import { Growdever, ValidationError } from '../models/growdever';
+import { ValidationError } from '../exceptions/validationError';
+import { Growdever } from '../models/growdever';
 
 export const createGrowdeverController = (req: Request, res: Response)=>{
 
     try {
-        const name = req.body.name;
-        const newGrowdever = new Growdever(name);
+        const newGrowdever = req.body.growdeverToCreate
         const insertedUuid = insertGrowdever(newGrowdever);
         
         if (insertedUuid){
