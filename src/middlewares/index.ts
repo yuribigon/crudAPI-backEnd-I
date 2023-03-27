@@ -1,4 +1,5 @@
 import { Express, NextFunction, Request, Response } from 'express';
+import { authMiddleware } from './authMiddleware';
 import { growdeverValidatorMiddleware } from './growdeverValidatorMiddleware';
 import { isAdminMiddleware } from './isAdminMiddleware';
 
@@ -17,6 +18,11 @@ export const registerMiddlewares = (app: Express) => {
   
   app.post(
     '/growdevers',
-    [isAdminMiddleware, growdeverValidatorMiddleware]
+    [isAdminMiddleware, growdeverValidatorMiddleware],
   );
+
+  app.get('*', authMiddleware)
+  app.put('*', authMiddleware)
+  app.delete('*', authMiddleware)
+
 }

@@ -13,8 +13,6 @@ export const createGrowdeverController = (req: Request, res: Response)=>{
             res.json(newGrowdever);
         }
 
-        return res.status(500).json({ message: 'Erro ao salvar growdever'})
-        
     } catch (error) {
         if(error instanceof ValidationError) {
             return res.status(400).json({ message: 'Erro no dado enviado'})

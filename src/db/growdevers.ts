@@ -16,13 +16,19 @@ export const insertGrowdever = (growdever: Growdever) => {
         growdevers.push(growdever);
         return growdever.getUuid();
     } catch (error) {
-        console.log('Erro ao salvar growdever');
+        throw new Error('Erro ao salvar growdever');
     }
 };
 
 export const selectGrowdeverByUuid = (uuidFilter : string): Growdever | undefined => {
     return growdevers.find(
         (growdever) => growdever.getUuid() === uuidFilter
+    )
+};
+
+export const selectGrowdeverByUsername = (username : string): Growdever | undefined => {
+    return growdevers.find(
+        (growdever) => growdever.getUsername() === username
     )
 };
 

@@ -33,6 +33,12 @@ export class Growdever {
   getCpf(): string {
     return this.cpf;
   }
+  getUsername(): string {
+    return this.username;
+  }
+  getPassword(): string {
+    return this.password;
+  }
 
   setName(name : string){
     if (name.split(' ').length < 2) throw new ValidationError('Nome inválido');
